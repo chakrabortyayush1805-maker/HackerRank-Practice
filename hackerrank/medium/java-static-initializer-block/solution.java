@@ -1,16 +1,15 @@
-import java.util.Scanner;
 
-public class Solution {
-    public static void main(String[] args) {
+static int B;
+    static int H;
+    static boolean flag = true;
+
+    static {
         Scanner sc = new Scanner(System.in);
-        int lineNumber = 1;
-
-        while (sc.hasNext()) {
-            String line = sc.nextLine();
-            System.out.println(lineNumber + " " + line);
-            lineNumber++;
+        B = sc.nextInt();
+        H = sc.nextInt();
+        
+        if (B <= 0 || H <= 0) {
+            flag = false;
+            System.out.println("java.lang.Exception: Breadth and height must be positive");
         }
-
-        sc.close();
     }
-}
