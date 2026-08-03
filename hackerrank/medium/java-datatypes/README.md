@@ -1,4 +1,4 @@
-# Java Loops II
+# Java Datatypes
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -40,32 +40,39 @@ If the number cannot be stored in one of the four aforementioned primitives, pri
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-03T11:15:21.984Z  
+**Submitted:** 2026-08-03T11:17:45.127Z  
 
 ```java
-import java.util.Scanner;
+import java.util.*;
 
-public class Solution {
+class Solution {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
-        
-        for (int q = 0; q < t; q++) {
-            int a = in.nextInt();
-            int b = in.nextInt();
-            int n = in.nextInt();
-            
-            int currentSum = a;
-            
-            for (int i = 0; i < n; i++) {
-                currentSum += (1 << i) * b;
-                System.out.print(currentSum + " ");
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        for (int i = 0; i < t; i++) {
+            try {
+                long x = sc.nextLong();
+                System.out.println(x + " can be fitted in:");
+
+                if (x >= Byte.MIN_VALUE && x <= Byte.MAX_VALUE) {
+                    System.out.println("* byte");
+                }
+                if (x >= Short.MIN_VALUE && x <= Short.MAX_VALUE) {
+                    System.out.println("* short");
+                }
+                if (x >= Integer.MIN_VALUE && x <= Integer.MAX_VALUE) {
+                    System.out.println("* int");
+                }
+                if (x >= Long.MIN_VALUE && x <= Long.MAX_VALUE) {
+                    System.out.println("* long");
+                }
+            } catch (Exception e) {
+                System.out.println(sc.next() + " can't be fitted anywhere.");
             }
-            
-            System.out.println();
         }
         
-        in.close();
+        sc.close();
     }
 }
 
