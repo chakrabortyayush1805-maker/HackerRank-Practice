@@ -1,4 +1,4 @@
-# Java Loops I
+# Java Loops II
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -30,23 +30,32 @@ For each query, print the corresponding series on a new line. Each series must b
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-03T11:13:42.414Z  
+**Submitted:** 2026-08-03T11:15:16.014Z  
 
 ```java
-import java.io.*;
+import java.util.Scanner;
 
 public class Solution {
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
-        int N = Integer.parseInt(bufferedReader.readLine().trim());
-
-        for (int i = 1; i <= 10; i++) {
-            int result = N * i;
-            System.out.println(N + " x " + i + " = " + result);
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        
+        for (int q = 0; q < t; q++) {
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            
+            int currentSum = a;
+            
+            for (int i = 0; i < n; i++) {
+                currentSum += (1 << i) * b;
+                System.out.print(currentSum + " ");
+            }
+            
+            System.out.println();
         }
-
-        bufferedReader.close();
+        
+        in.close();
     }
 }
 
