@@ -53,7 +53,7 @@ If both values are greater than zero, then the *main* method must output the are
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-03T11:22:28.874Z  
+**Submitted:** 2026-08-04T11:25:52.663Z  
 
 ```java
 
