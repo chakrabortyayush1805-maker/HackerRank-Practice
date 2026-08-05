@@ -1,4 +1,4 @@
-# Java Static Initializer Block
+# Java Currency Formatter
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -21,24 +21,33 @@ $n$ can range between $-100$ to $100$ inclusive.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-04T11:25:59.365Z  
+**Submitted:** 2026-08-05T18:27:30.622Z  
 
 ```java
+import java.util.*;
+import java.text.*;
 
-static int B;
-    static int H;
-    static boolean flag = true;
-
-    static {
-        Scanner sc = new Scanner(System.in);
-        B = sc.nextInt();
-        H = sc.nextInt();
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
         
-        if (B <= 0 || H <= 0) {
-            flag = false;
-            System.out.println("java.lang.Exception: Breadth and height must be positive");
-        }
+        // Write your code here.
+        Locale indiaLocale = new Locale("en", "IN");
+
+        String us = NumberFormat.getCurrencyInstance(Locale.US).format(payment);
+        String india = NumberFormat.getCurrencyInstance(indiaLocale).format(payment);
+        String china = NumberFormat.getCurrencyInstance(Locale.CHINA).format(payment);
+        String france = NumberFormat.getCurrencyInstance(Locale.FRANCE).format(payment);
+        
+        System.out.println("US: " + us);
+        System.out.println("India: " + india);
+        System.out.println("China: " + china);
+        System.out.println("France: " + france);
     }
+}
 
 ```
 
