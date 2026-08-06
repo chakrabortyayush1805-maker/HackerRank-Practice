@@ -1,4 +1,4 @@
-# Java String Tokens
+# Pattern Syntax Checker
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -27,32 +27,32 @@ For each test case, print ``Valid`` if the syntax of the given pattern is correc
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-06T14:58:11.169Z  
+**Submitted:** 2026-08-06T15:00:58.896Z  
 
 ```java
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
+import java.util.regex.*;
 
-public class Solution {
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
-        // Write your code here.
-        s = s.trim();
-        if (s.isEmpty()) {
-            System.out.println(0);
-            return;
-        }
-
-        String[] tokens = s.split("[^A-Za-z]+");
-        System.out.println(tokens.length);
-        for (String token : tokens) {
-            System.out.println(token);
-        }
-        scan.close();
-    }
+public class Solution
+{
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		int testCases = Integer.parseInt(in.nextLine());
+		while(testCases>0){
+			String pattern = in.nextLine();
+          	//Write your code
+            try {
+                Pattern.compile(pattern);
+                System.out.println("Valid");
+            } catch (PatternSyntaxException e) {
+                System.out.println("Invalid");
+            }
+            testCases--;
+		}
+	}
 }
+
+
 
 
 ```
