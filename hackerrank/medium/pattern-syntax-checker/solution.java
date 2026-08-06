@@ -1,24 +1,24 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
+import java.util.regex.*;
 
-public class Solution {
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
-        // Write your code here.
-        s = s.trim();
-        if (s.isEmpty()) {
-            System.out.println(0);
-            return;
-        }
-
-        String[] tokens = s.split("[^A-Za-z]+");
-        System.out.println(tokens.length);
-        for (String token : tokens) {
-            System.out.println(token);
-        }
-        scan.close();
-    }
+public class Solution
+{
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		int testCases = Integer.parseInt(in.nextLine());
+		while(testCases>0){
+			String pattern = in.nextLine();
+          	//Write your code
+            try {
+                Pattern.compile(pattern);
+                System.out.println("Valid");
+            } catch (PatternSyntaxException e) {
+                System.out.println("Invalid");
+            }
+            testCases--;
+		}
+	}
 }
+
+
 
