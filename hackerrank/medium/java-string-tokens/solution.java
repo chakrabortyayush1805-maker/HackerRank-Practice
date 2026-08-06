@@ -1,27 +1,24 @@
+import java.io.*;
+import java.util.*;
 
+public class Solution {
 
-    static boolean isAnagram(String a, String b) {
-        // Complete the function
-        a = a.toLowerCase();
-        b = b.toLowerCase();
-
-        if (a.length() != b.length()) {
-            return false;
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        // Write your code here.
+        s = s.trim();
+        if (s.isEmpty()) {
+            System.out.println(0);
+            return;
         }
 
-        int[] count = new int[26];
-
-        for (int i = 0; i < a.length(); i++) {
-            count[a.charAt(i) - 'a']++;
-            count[b.charAt(i) - 'a']--;
+        String[] tokens = s.split("[^A-Za-z]+");
+        System.out.println(tokens.length);
+        for (String token : tokens) {
+            System.out.println(token);
         }
-
-        for (int c : count) {
-            if (c != 0) {
-                return false;
-            }
-        }
-
-        return true;
+        scan.close();
     }
+}
 
