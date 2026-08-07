@@ -1,4 +1,4 @@
-# Pattern Syntax Checker
+# Java Regex
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -50,32 +50,15 @@ Just write the MyRegex class which contains a String $pattern$. The string shoul
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-07T15:56:17.520Z  
+**Submitted:** 2026-08-07T16:14:05.951Z  
 
 ```java
-import java.util.Scanner;
-import java.util.regex.*;
 
-public class Solution
-{
-	public static void main(String[] args){
-		Scanner in = new Scanner(System.in);
-		int testCases = Integer.parseInt(in.nextLine());
-		while(testCases>0){
-			String pattern = in.nextLine();
-          	try {
-                Pattern.compile(pattern);
-                System.out.println("Valid");
-            } catch (PatternSyntaxException e) {
-                System.out.println("Invalid");
-            }
-            testCases--;
-		}
-	}
+
+class MyRegex {
+    String zeroTo255 = "(\\d{1,2}|(0|1)\\d{2}|2[0-4]\\d|25[0-5])";
+    public String pattern = zeroTo255 + "\\." + zeroTo255 + "\\." + zeroTo255 + "\\." + zeroTo255;
 }
-
-
-
 
 ```
 
