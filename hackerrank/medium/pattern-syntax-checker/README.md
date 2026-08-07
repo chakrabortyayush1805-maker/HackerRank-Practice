@@ -27,7 +27,7 @@ For each test case, print ``Valid`` if the syntax of the given pattern is correc
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-06T15:00:58.896Z  
+**Submitted:** 2026-08-07T15:55:57.067Z  
 
 ```java
 import java.util.Scanner;
@@ -40,8 +40,7 @@ public class Solution
 		int testCases = Integer.parseInt(in.nextLine());
 		while(testCases>0){
 			String pattern = in.nextLine();
-          	//Write your code
-            try {
+          	try {
                 Pattern.compile(pattern);
                 System.out.println("Valid");
             } catch (PatternSyntaxException e) {
