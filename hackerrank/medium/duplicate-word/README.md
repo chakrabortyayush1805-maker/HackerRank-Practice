@@ -1,4 +1,4 @@
-# Java Regex
+# Java Regex 2 - Duplicate Words
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -37,14 +37,39 @@ Stub code in the editor prints the sentence modified by the *replaceAll* line to
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-07T16:14:11.806Z  
+**Submitted:** 2026-08-07T16:16:55.580Z  
 
 ```java
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+public class DuplicateWords {
 
-class MyRegex {
-    String zeroTo255 = "(\\d{1,2}|(0|1)\\d{2}|2[0-4]\\d|25[0-5])";
-    public String pattern = zeroTo255 + "\\." + zeroTo255 + "\\." + zeroTo255 + "\\." + zeroTo255;
+    public static void main(String[] args) {
+
+        String regex = "\\b(\\w+)(?:\\s+\\1)+\\b";
+        Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+
+        Scanner in = new Scanner(System.in);
+        int numSentences = Integer.parseInt(in.nextLine());
+        
+        while (numSentences-- > 0) {
+            String input = in.nextLine();
+            
+            Matcher m = p.matcher(input);
+            
+            // Check for subsequences of input that match the compiled pattern
+            while (m.find()) {
+                input = input.replaceAll(m.group(), m.group(1));
+            }
+            
+            // Prints the modified sentence.
+            System.out.println(input);
+        }
+        
+        in.close();
+    }
 }
 
 ```
