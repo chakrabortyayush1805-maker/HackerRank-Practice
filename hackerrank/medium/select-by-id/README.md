@@ -1,4 +1,4 @@
-# Select All
+# Select By ID
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -24,7 +24,7 @@ The **CITY** table is described as follows:
 **Language:** db2  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-08T04:49:51.106Z  
+**Submitted:** 2026-08-08T04:51:53.148Z  
 
 ```db2
 
@@ -33,7 +33,7 @@ The **CITY** table is described as follows:
     1. Please append a semicolon ";" at the end of the query and enter your query in a single line to avoid error.
     2. The AS keyword causes errors, so follow this convention: "Select t.Field From table1 t" instead of "select t.Field From table1 AS t"
     3. Type your code immediately after comment. Don't leave any blank line.
-*/SELECT * FROM CITY;
+*/SELECT * FROM CITY WHERE ID = 1661;
 
 ```
 
